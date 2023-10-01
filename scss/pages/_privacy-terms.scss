@@ -1,0 +1,61 @@
+.privacy-terms {
+  &-section {
+    background-color: #fff;
+    @include breakpoint('mobile') {
+      padding: 40px 16px;
+      margin: 0 -16px;
+    }
+    @include breakpoint('tablet-up') {
+      padding: 40px;
+    }
+  }
+
+  h1 {
+    font-size: 24px;
+    line-height: 32px;
+  }
+
+  &-block {
+    margin-top: 40px;
+    font-size: 16px;
+    line-height: 24px;
+
+    p {
+      margin-top: 24px;
+
+      a {
+        text-decoration: underline;
+        font-weight: 600;
+        color: inherit;
+
+        @media (any-hover: hover) { 
+          &:hover {
+            text-decoration: none;
+          }
+        }
+      }
+    }
+
+    h2 {
+      color: $color-light;
+      margin-top: 24px;
+      font-size: 16px;
+      line-height: 24px;
+      text-transform: uppercase;
+
+      span {
+        margin-right: 10px;
+      }
+    }
+
+    ul {
+      li p:before {
+        content: '– ';
+      }
+    }
+
+    > *:first-child {
+      margin-top: 0;
+    }
+  }
+}

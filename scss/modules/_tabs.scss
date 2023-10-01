@@ -1,0 +1,127 @@
+.tabs {
+  &-header {
+    @include breakpoint('mobile') {
+      position: relative;
+      border: 1px solid $color-border;
+      border-radius: $border-radius;
+      z-index: 3;
+      background-color: #fff;
+      
+      @include transition(border-color);
+
+      @media (any-hover: hover) { 
+        &:hover {
+          border-color: $color-border-hover;
+        }
+      }
+
+      &._opened {
+        border-color: $color-main;
+
+        .tabs-header__toggle:after {
+          transform: rotate(-180deg);
+        }
+      }
+    }
+
+    &-wrap {
+      @include breakpoint('mobile') {
+        height: 44px;
+      }
+    }
+    &-list {
+      display: flex;
+
+      @include breakpoint('mobile') {
+        flex-direction: column;
+        height: 0;
+        overflow: hidden;
+        @include transition(height);
+      }
+
+      @include breakpoint('tablet-up') {
+        height: auto !important;
+      }
+
+      &__item {
+        font-size: 16px;
+        line-height: 24px;
+        color: $color-main;
+        cursor: pointer;    
+        
+        @include breakpoint('mobile') {
+          display: block;
+          padding: 10px 16px;
+          @include transition(background-color, color);
+  
+          @media (any-hover: hover) { 
+            &:hover {
+              background-color: $color-border;
+            }
+          }
+        }
+        @include breakpoint('tablet') {
+          flex: 1;
+          &:not(:first-child) {
+            margin-left: 16px;
+          }
+        }
+        @include breakpoint('tablet-up') {
+          padding: 9px;
+          text-align: center;
+          border: 1px solid $color-main;
+          border-radius: $border-radius;
+          @include transition(background-color, color);
+  
+          @media (any-hover: hover) { 
+            &:not(.active):hover {
+              background-color: $color-bg-light;
+            }
+          }
+        }      
+        @include breakpoint('desktop') {
+          width: 208px;
+  
+          &:not(:first-child) {
+            margin-left: 24px;
+          }
+        }
+  
+        &.active {
+          color: #fff;
+          background-color: $color-main;
+        }
+      }
+    }
+    &__toggle {
+      @include breakpoint('mobile') {
+        padding: 9px 55px 9px 15px;
+        cursor: pointer;
+        font-size: 16px;
+        line-height: 24px;
+        position: relative;        
+  
+        &:after {
+          content: '';
+          display: block;
+          position: absolute;
+          right: 16px;
+          top: 9px;
+          width: 24px;
+          height: 24px;
+          background: url(../img/icons/chevron-down.svg) no-repeat;
+          @include transition(transform);
+        }
+      }
+    }
+  }
+  &-content {
+    &__item {
+      display: none;
+
+      &.active {
+        display: block;
+      }
+    }
+  }
+}

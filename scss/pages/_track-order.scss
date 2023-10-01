@@ -1,0 +1,52 @@
+.track-order {
+  &-section {
+    background-color: #fff;
+
+    @include breakpoint('mobile') {
+      margin: 0 -16px;
+    }
+
+    &__title {
+      font-size: 24px;
+      line-height: 32px;
+      font-weight: 600;
+      
+      @include breakpoint('mobile') {
+        padding: 40px 16px;
+      }
+      @include breakpoint('tablet-up') {
+        padding: 44px 40px;
+        box-shadow: inset 0 -1px 0 $color-border;
+      }
+    }
+  }
+  &-content {
+    position: relative;
+
+    @include breakpoint('mobile') {
+      padding: 0 16px 40px;
+    }
+    @include breakpoint('tablet-up') {
+      padding: 40px;
+    }
+
+    @include breakpoint('desktop') {
+      background: url(../img/icons/truck.svg) no-repeat transparent right 40px top 78px;
+    }
+  }
+  &-form {
+    @include breakpoint('tablet-up') {
+      width: 470px;
+    }
+
+    &__row {
+      margin-top: 24px;
+    }
+
+    &__submit {
+      @include breakpoint('tablet-up') {
+        width: 210px;
+      }
+    }
+  }
+}

@@ -1,0 +1,206 @@
+.faq {
+  &-layout {
+    background-color: #fff;
+    border-radius: $border-radius;
+
+    @include breakpoint('mobile') {
+      margin: 0 -16px;
+    }
+
+    @include breakpoint('desktop') {
+     display: flex;
+    }
+    
+    &__menu {
+      @include breakpoint('desktop') {
+        flex: 0 0 392px;
+        min-width: 0;
+      }
+    }
+    &__content {
+      @include breakpoint('mobile') {
+        padding: 40px 16px;
+      }
+      @include breakpoint('tablet') {
+        padding: 40px;
+      }
+      @include breakpoint('desktop') {
+        flex-grow: 1;
+        box-shadow: -1px 0 0 $color-border;
+        padding: 0 40px 40px;
+      }
+
+      &-title {
+        font-size: 24px;
+        line-height: 32px;
+        font-weight: 600;
+        padding: 40px 0;
+      }
+
+      .load-more-answers {
+        margin-top: 40px;
+        @include breakpoint('tablet') {
+          width: 237px;
+        }
+      }
+    }
+  }
+  &-subtitle {
+    background-color: $color-main;
+    color: #fff;
+    padding-top: 40px;
+    padding-bottom: 40px;
+    font-weight: 600;
+    font-size: 24px;
+    line-height: 32px;
+    @include text-ellipsis();
+    min-width: 0;
+
+    @include breakpoint('mobile') {
+      padding: 24px 16px;
+    }
+    @include breakpoint('tablet') {
+      padding: 40px;
+    }
+    @include breakpoint('desktop') {
+      padding: 40px 24px;
+    }
+  }
+  &-nav {
+    @include breakpoint('desktop-down') {
+      position: relative;
+      border-bottom: 1px solid $color-border;
+      z-index: 3;
+      background-color: #fff;      
+
+      &._opened {
+        border-bottom-color: transparent;
+
+        .cabinet-nav__toggle:after {
+          transform: rotate(-180deg);
+        }
+      }
+    }
+    &__toggle {
+      cursor: pointer;
+      font-size: 16px;
+      line-height: 32px;
+      position: relative;
+      display: flex;
+      align-items: center; 
+      
+      @include breakpoint('mobile') {
+        padding: 16px 56px 16px 16px;
+
+        &:after {
+          right: 16px;
+        }
+      }
+      @include breakpoint('tablet') {
+        padding: 16px 104px 16px 40px;
+
+        &:after {
+          right: 40px;
+        }
+      }
+
+      &:after {
+        content: '';
+        display: block;
+        position: absolute;
+        top: 20px;
+        width: 24px;
+        height: 24px;
+        background: url(../img/icons/chevron-down.svg) no-repeat;
+        @include transition(transform);
+      }
+
+      svg {
+        margin-right: 8px;
+      }
+    }
+    &__list {
+      @include breakpoint('desktop-down') {
+        height: 0;
+        overflow: hidden;
+        @include transition(height);
+        box-shadow: 0px 8px 16px rgba(0, 0, 0, 0.1);
+      }
+
+      a {
+        font-size: 16px;
+        line-height: 32px;
+        color: $color-main;
+        box-shadow: 0 1px 0 $color-border;
+        display: flex;
+        align-items: center;
+        @include transition(background-color);
+
+        @media (any-hover: hover) { 
+          &:hover {
+            background-color: $color-border;
+          }
+        }
+
+        @include breakpoint('mobile') {
+          padding: 16px;
+
+          &.active:after {
+            right: 25px;
+          }
+        }
+        @include breakpoint('tablet') {
+          padding: 16px 40px;
+
+          &.active:after {
+            right: 49px;
+          }
+        }
+        @include breakpoint('desktop') {
+          padding: 16px 24px;
+
+          &.active:after {
+            right: 33px;
+          }
+        }
+        
+        &.active {
+          color: #fff;
+          background-color: $color-accent;
+          position: relative;
+
+          &:after {
+            content: '';
+            display: block;
+            position: absolute;
+            width: 6px;
+            height: 6px;
+            background-color: #fff;
+            border-radius: 50%;
+            top: 29px;
+          }
+        }
+
+        svg {
+          margin-right: 8px;
+          path {
+            fill: currentColor;
+          }
+        }
+      }
+    }
+    &-wrap {
+      @include breakpoint('desktop-down') {
+        height: 64px;
+      }
+    }
+  }
+  &-page-accordion-list {
+    @include breakpoint('desktop') {
+      padding-top: 8px;
+    }
+    .faq-accordion:not(:first-child) {
+      margin-top: 24px;
+    }
+  }
+}

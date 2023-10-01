@@ -1,0 +1,182 @@
+.login-content {
+  @include breakpoint('mobile') {
+    padding: 0 16px;
+    margin: 0 -16px;
+  }
+
+  
+
+  &__title {
+    font-weight: 600;
+
+    @include breakpoint('mobile') {
+      font-size: 24px;
+      line-height: 32px;
+    }
+
+    @include breakpoint('tablet-up') {
+      font-size: 48px;
+      line-height: 64px;
+    }
+  }
+
+  &__txt {
+    margin-top: 24px;
+
+    @include breakpoint('tablet-up') {
+      font-size: 24px;
+      line-height: 32px;
+    }
+  }
+
+  &-layout {
+    margin-top: 24px;
+    @include breakpoint('mobile') {
+      padding-bottom: 16px;
+    }
+    @include breakpoint('tablet') {
+      padding-bottom: 56px;
+    }
+    @include breakpoint('desktop') {
+      display: flex;
+    }
+
+    &__left {
+      @include breakpoint('desktop') {
+        width: 500px;
+      }
+    }
+    &__right {
+      position: relative;
+      @include breakpoint('desktop') {
+        margin-right: 32px;
+        flex-grow: 1;
+        display: flex;
+        justify-content: flex-end;
+      }
+
+      &-form {
+        @include breakpoint('desktop') {
+          width: 440px;
+        }
+
+        &__title {
+          text-align: center;
+          font-weight: 500;
+          margin-bottom: 24px;
+  
+          @include breakpoint('mobile') {
+            font-size: 16px;
+            line-height: 24px;
+          }
+          @include breakpoint('tablet-up') {
+            font-size: 24px;
+            line-height: 32px;
+          }
+        }
+      }
+
+      &-divider {
+        display: flex;
+
+        @include breakpoint('mobile') {
+          margin: 40px 0 24px;
+        }
+        @include breakpoint('tablet') {
+          margin: 40px 0;
+        }
+
+        @include breakpoint('desktop-down') {
+          position: relative;
+          justify-content: center;          
+        }
+
+        @include breakpoint('desktop') {
+          position: absolute;
+          left: 84px;
+          top: 0;
+          bottom: 0;
+          align-items: center;
+        }
+
+        span {
+          font-size: 16px;
+          line-height: 24px;
+          font-weight: 600;
+          color: $color-light;
+          background-color: #fff;
+          position: relative;
+
+          @include breakpoint('mobile') {
+            padding: 6px 5px;
+          }
+          @include breakpoint('tablet') {
+            padding: 6px 24px;
+          }
+          @include breakpoint('desktop') {
+            padding: 8px 0 4px;
+          }
+        }
+
+        &:before {
+          content: '';
+          display: block;
+          position: absolute;          
+          background-color: $color-border;
+
+          @include breakpoint('desktop-down') {
+            top: 50%;
+            transform: translateY(-50%);
+            left: 0;
+            right: 0;
+            height: 1px;
+          }
+          @include breakpoint('desktop') {
+            left: 50%;
+            transform: translateX(-50%);
+            top: 0;
+            bottom: 0;
+            width: 1px;
+          }
+        }
+      }
+    }
+  }
+
+  form {
+    &.login, &.register {
+      margin: 0;
+      border: none;
+      padding: 0;
+      border-radius: 0;
+    }
+
+    &.login {
+      @include breakpoint('desktop') {
+        width: 328px;
+      }
+    }
+  }
+}
+
+.page-login {
+  @include breakpoint('desktop') {
+    background: #fff;
+  }
+
+  .breadcrumbs-section {
+    display: none;
+  }
+
+  .page-content > .wrapper {
+    @include breakpoint('mobile') {
+      padding-top: 40px;
+    }
+    @include breakpoint('tablet-up') {
+      padding-top: 80px;
+    }
+    @include breakpoint('desktop-down') {
+      background-color: #fff;
+    }
+  }
+}

@@ -1,0 +1,90 @@
+.hiw {
+  &-section {
+    background-color: #fff;
+    @include breakpoint('mobile') {
+      padding: 40px 16px;
+      margin: 0 -16px;
+    }
+    @include breakpoint('tablet-up') {
+      padding: 40px 40px 0;
+    }
+  }
+  &-top {
+    font-weight: 600;
+    @include breakpoint('mobile') {
+      font-size: 16px;
+      line-height: 24px;
+    }
+    @include breakpoint('tablet-up') {
+      font-size: 24px;
+      line-height: 32px;
+    }
+  }
+  &-header {
+    margin-top: 40px;
+
+    h1 {
+      font-weight: 600;
+      @include breakpoint('mobile') {
+        font-size: 24px;
+        line-height: 32px;
+      }
+      @include breakpoint('tablet-up') {
+        font-size: 48px;
+        line-height: 64px;
+      }
+    }
+    p {
+      color: $color-light;
+      margin-top: 8px;
+      
+      @include breakpoint('tablet-up') {
+        font-size: 18px;
+      }
+    }
+  }
+  &-content {
+    display: flex;
+    flex-wrap: wrap;
+
+    @include breakpoint ('mobile') {
+      padding: 64px 0 40px;
+    }
+    @include breakpoint ('tablet') {
+      margin: 43px -40px 0;
+    }
+    @include breakpoint ('desktop') {
+      margin: 56px -50px 0;
+    }
+
+    &-item {
+      @include breakpoint ('mobile') {
+        width: 100%;
+
+        &:not(:first-child) {
+          padding-top: 84px;
+        }
+      }
+      @include breakpoint ('tablet') {
+        flex: 50% 0 0;
+        padding: 0 40px 80px;
+      }
+      @include breakpoint ('desktop') {
+        flex: 33.33333% 0 0;
+        padding: 0 50px 80px;
+      }
+      &__icon {
+        display: flex;
+      }
+      h2 {
+        font-weight: 600;
+        margin-top: 20px;
+        font-size: 18px;
+        line-height: 32px;
+      }
+      p {
+        margin-top: 10px;
+      }
+    }
+  }
+}

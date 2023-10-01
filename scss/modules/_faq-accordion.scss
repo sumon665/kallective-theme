@@ -1,0 +1,36 @@
+.faq-accordion {
+  &:after {
+    @include breakpoint('mobile') {
+      right: 16px;
+      top: 16px;
+    }
+    @include breakpoint('tablet-up') {
+      right: 20px;
+      top: 20px;
+    }
+  }
+
+  &._opened {
+    .faq-accordion__header {
+      font-weight: 700;
+    }
+  }
+
+  &__header {   
+    @include breakpoint('mobile') {
+      padding: 15px 55px 15px 15px;
+    }
+    @include breakpoint('tablet-up') {
+      padding: 19px 63px 19px 19px;
+    }
+  }
+
+  &__body {
+    @include breakpoint('mobile') {
+      padding: 0 15px 24px 15px;
+    }
+    @include breakpoint('tablet-up') {
+      padding: 0 19px 20px 19px;
+    }
+  }
+}

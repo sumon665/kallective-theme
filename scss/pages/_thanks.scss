@@ -1,0 +1,79 @@
+.thanks {
+  &-section {
+    @include breakpoint('mobile') {
+      padding-top: 72px;
+    }
+    @include breakpoint('tablet') {
+      padding: 112px 0 32px;
+    }
+    @include breakpoint('desktop') {      
+      padding: 152px 0 72px;
+    }
+  }
+
+  &-layout {
+    display: flex;
+    @include breakpoint('desktop-down') {
+      flex-direction: column-reverse;
+      align-items: center;
+      text-align: center;
+    }
+    @include breakpoint('desktop') {
+      align-items: center;
+      justify-content: space-between;
+    }
+
+    &__txt {
+      @include breakpoint('mobile') {
+        width: 100%;
+      }
+      @include breakpoint('desktop-down') {
+        margin-top: 32px;
+      }
+      h1 {
+        @include breakpoint('mobile') {
+          font-size: 24px;
+          line-height: 32px;
+        }
+        @include breakpoint('tablet-up') {
+          font-size: 48px;
+          line-height: 64px;
+        }
+      }
+
+      p {
+        margin-top: 24px;
+        @include breakpoint('mobile') {
+          font-size: 16px;
+          line-height: 24px;
+          max-width: 242px;
+          margin-left: auto;
+          margin-right: auto;
+        }
+        @include breakpoint('tablet-up') {
+          font-size: 24px;
+          line-height: 32px;
+        }
+      }
+
+      .btn-primary {
+        margin-top: 24px;
+        @include breakpoint('tablet-up') {
+          width: 213px;
+        }
+      }
+    }
+    &__img {
+      img {
+        @include breakpoint('tablet') {
+          width: 168px;
+          height: 112px;
+        }
+        @include breakpoint('desktop') {
+          width: 360px;
+          height: 256px;
+        }
+      }
+    }
+  }
+}

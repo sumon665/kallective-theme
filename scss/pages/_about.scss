@@ -1,0 +1,145 @@
+.about {
+  &-section {
+    background-color: #fff;
+    @include breakpoint('mobile') {
+      padding: 28px 16px 40px;
+      margin: 0 -16px;
+    }
+    @include breakpoint('tablet-up') {
+      padding: 40px;
+    }
+  }
+  &-top {
+    font-weight: 600;
+    @include breakpoint('mobile') {
+      font-size: 16px;
+      line-height: 24px;
+    }
+    @include breakpoint('tablet') {
+      font-size: 18px;
+      line-height: 32px;
+    }
+    @include breakpoint('desktop') {
+      font-size: 24px;
+      line-height: 32px;
+    }
+  }
+  &-header {
+    @include breakpoint('mobile') {
+      margin-top: 28px;
+    }
+    @include breakpoint('tablet-up') {
+      margin-top: 40px;
+    }
+
+    h1 {
+      font-weight: 600;
+      @include breakpoint('mobile') {
+        font-size: 24px;
+        line-height: 32px;
+      }
+      @include breakpoint('tablet-up') {
+        font-size: 48px;
+        line-height: 64px;
+      }
+    }
+    p {
+      font-size: 18px;
+      color: $color-light;
+      margin-top: 8px;
+    }
+  }
+  &-content {
+    @include breakpoint('mobile') {
+      padding-top: 20px;
+    }
+    @include breakpoint('desktop') {
+      padding-top: 30px;
+    }
+    &-item {
+      margin-top: 60px;
+
+      @include breakpoint('desktop') {
+        display: flex;
+      }
+      h2 {
+        font-size: 24px;
+        line-height: 32px;
+        position: relative;
+        padding-left: 75px;
+
+        @include breakpoint('desktop') {
+          flex: 0 0 322px;
+        }
+
+        &:before {
+          content: '';
+          display: block;
+          position: absolute;
+          left: 0;
+          top: 15px;
+          width: 50px;
+          height: 2px;
+          background-color: #000;
+        }
+      }
+      p {
+        @include breakpoint('desktop-down') {
+          margin-top: 35px;
+        }
+      }
+    }
+  }
+  &-benefits {
+    border-top: 1px solid $color-border-dark;
+
+    @include breakpoint('mobile') {
+      margin-top: 80px;
+      padding-top: 20px;
+    }
+    @include breakpoint('tablet') {
+      margin-top: 80px;
+      padding-top: 40px;
+    }
+    @include breakpoint('desktop') {
+      margin-top: 90px;
+      padding-top: 90px;
+    }
+    &-list {
+      @include breakpoint('desktop') {
+        display: flex;
+        margin: 0 -37px;
+      }
+    }
+    &-item {
+      @include breakpoint('desktop-down') {
+        padding-top: 40px;
+      }
+      @include breakpoint('desktop') {
+        flex: 33.3333% 0 0;
+        padding: 0 37px;
+      }
+
+      h3 {
+        font-size: 18px;
+        line-height: 32px;
+        font-weight: 600;
+      }
+
+      p {
+        margin-top: 10px;
+      }
+    }
+  }
+  &-social {
+    margin-top: 30px;
+    &__title {
+      font-size: 16px;
+      line-height: 24px;
+      color: $color-light;
+    }
+    .footer-social {
+      margin-top: 12px;
+    }
+  }
+}

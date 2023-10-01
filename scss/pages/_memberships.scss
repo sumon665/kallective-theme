@@ -1,0 +1,168 @@
+.memberships {
+  &-section {
+    background-color: #fff;
+    @include breakpoint('mobile') {
+      padding: 40px 16px;
+      margin: 0 -16px;
+    }
+    @include breakpoint('tablet-up') {
+      padding: 40px;
+    }
+  }
+  &-top {
+    font-weight: 600;    
+
+    @include breakpoint('mobile') {
+      font-size: 16px;
+      line-height: 24px;
+    }
+    @include breakpoint('tablet-up') {
+      font-size: 24px;
+      line-height: 32px;
+    }
+  }
+  &-intro {
+    margin-top: 40px;
+    
+    p {
+      @include breakpoint('desktop') {
+        max-width: 908px;
+      }
+      &:not(:first-of-type) {
+        margin-top: 24px;
+      }
+    }
+  }
+  &-plan {
+    &-row {
+      @include breakpoint('desktop') {
+        display: flex;
+        margin: 0 -20px;
+      }
+    }
+    &-col {
+      @include breakpoint('desktop-down') {
+        margin-top: 24px;
+      }
+      @include breakpoint('desktop') {
+        padding: 0 20px;
+        width: 50%;
+        margin-top: 40px;
+      }
+    }
+    &-item {
+      padding: 23px;
+      border: 1px solid $color-border;
+      background-color: $color-bg-light;
+      border-radius: $border-radius;
+      position: relative;
+
+      @include breakpoint('desktop') {
+        height: 100%;
+      }
+
+      &__title {
+        font-size: 20px;
+        line-height: 24px;
+        font-weight: 600;
+      }
+
+      &__price {
+        display: flex;
+        align-items: center;
+        flex-wrap: wrap;
+        margin-top: 8px;
+      }
+
+      &-price {
+        padding-top: 8px;
+        color: $color-accent;
+        padding-right: 16px;
+        font-size: 16px;
+        line-height: 40px;
+        font-weight: 600;
+
+        span {
+          font-size: 32px;
+        }
+
+        &-old {
+          padding-top: 8px;
+          font-size: 24px;
+          line-height: 32px;
+          color: $color-light;
+          text-decoration: line-through;
+        }
+      }
+
+      &__desc {
+        margin-top: 24px;
+
+        &-title {
+          font-weight: 600;
+        }
+
+        &-list {
+          padding-top: 8px;
+          li {
+            margin-top: 8px;
+            position: relative;
+            padding-left: 25px;
+
+            &:before {
+              content: '';
+              display: block;
+              position: absolute;
+              top: 9px;
+              left: 9px;
+              width: 6px;
+              height: 6px;
+              border-radius: 50%;
+              background-color: $color-accent;
+            }
+          }
+        }
+      }
+
+      &__action {
+        margin-top: 24px;
+
+        .btn-primary {
+          @include breakpoint('tablet-up') {
+            width: 256px;
+          }
+        }
+      }
+
+      &-economy {
+        position: absolute;
+        top: 15px;
+        right: 15px;
+        padding: 3px 14px;
+        color: $color-accent;
+        background-color: #fff;
+        border: 1px solid $color-border;
+        border-radius: $border-radius;
+        font-size: 16px;
+        line-height: 24px;
+      }
+
+      &-subscribed {
+        &__top {
+          display: flex;
+          font-weight: 600;
+
+          .icon {
+            margin-right: 8px;
+          }
+        }
+
+        &__btm {
+          padding-top: 4px;
+          color: $color-light;
+          display: block;
+        }
+      }
+    }
+  }
+}

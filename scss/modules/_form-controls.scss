@@ -1,0 +1,646 @@
+.btn {
+  &-primary {
+    @include btn();
+    color: #fff;
+    background-color: $color-btn-primary;
+    border: none;
+    padding: 10px 24px;
+    @include transition(background-color);
+
+    @media (any-hover: hover) { 
+      &:not(._loading):not(:disabled):hover {
+        background-color: $color-btn-primary-hover;
+      }
+    }
+
+    &:not(._loading):not(:disabled):active {
+      background-color: $color-btn-primary-active;
+    }
+    
+    &:not(._loading):disabled {
+      background-color: $color-btn-primary-disable;
+    }
+  }
+  &-primary-outline {
+    @include btn();
+    color: $color-main;
+    background-color: #fff;
+    border: 1px solid $color-btn-primary-outline;
+    padding: 9px 24px;
+    @include transition(background-color, border-color, color);
+
+    @media (any-hover: hover) { 
+      &:not(._loading):not(:disabled):hover {
+        color: #fff;
+        background-color: $color-btn-primary-outline-hover;
+        border-color: $color-btn-primary-outline-hover;
+      }
+    } 
+
+    &:not(._loading):not(:disabled):active {
+      color: #fff;
+      background-color: $color-btn-primary-outline-active;
+      border-color: $color-btn-primary-outline-active;
+    }
+
+    &:not(._loading):disabled {
+      color: $color-light;
+      background-color: $color-btn-primary-outline-disable;
+      border-color: $color-btn-primary-disable;
+    }
+
+    &._loading .icon-spinner {
+      background-image: url(../img/icons/spinner-accent.svg);
+    }
+  }
+  &-secondary {
+    @include btn();
+    color: #fff;
+    background-color: $color-btn-secondary;
+    border: none;
+    padding: 10px 24px;
+    @include transition(background-color);
+
+    @media (any-hover: hover) { 
+      &:not(:disabled):hover {
+        background-color: $color-btn-secondary-hover;
+      }
+    }
+
+    &:not(:disabled):active {
+      background-color: $color-btn-secondary-active;
+    }
+    
+    &:not(._loading):disabled {
+      background-color: $color-btn-secondary-disable;
+      border: 1px solid $color-border-hover;
+      padding: 9px 23px;
+    }
+  }
+  &-secondary-outline {
+    @include btn();
+    color: $color-main;
+    background-color: #fff;
+    border: 1px solid $color-btn-secondary-outline;
+    padding: 9px 24px;
+    @include transition(background-color, border-color, color);
+
+    @media (any-hover: hover) { 
+      &:not(:disabled):hover {
+        color: #fff;
+        background-color: $color-btn-secondary-outline-hover;
+        border-color: $color-btn-secondary-outline-hover;
+      }
+    }
+
+    &:not(:disabled):active {
+      color: #fff;
+      background-color: $color-btn-secondary-outline-active;
+      border-color: $color-btn-secondary-outline-active;
+    }
+
+    &:disabled {
+      color: #fff;
+      background-color: $color-btn-secondary-outline-disable;
+      border-color: $color-btn-secondary-outline-disable;
+    }
+  }
+  &-icon {
+    padding: 0;
+    width: 44px;
+    min-width: 44px;
+    height: 44px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+}
+
+.control {
+  &-label {
+    font-size: 16px;
+    line-height: 24px;
+    padding-bottom: 8px;
+    position: relative;
+    display: block;
+  }
+  &-input {
+    input, textarea {
+      @include input();
+    }
+  
+    textarea {
+      resize: none;
+      height: 88px;
+    }
+
+    label.error {
+      font-size: 16px;
+      line-height: 24px;
+      color: $color-accent;
+      padding-top: 4px;
+    }
+  }
+  &-radio {
+    display: inline-flex;
+    align-items: center;
+    position: relative;
+    cursor: pointer;
+
+    @media (any-hover: hover) { 
+      &:hover {
+        .control-radio__icon {
+          border-color: #747A83;
+        }
+      }
+    }
+
+    label.error {
+      display: none !important;
+    }
+
+    &__icon {
+      position: relative;
+      width: 22px;
+      height: 22px;
+      min-width: 22px;
+      border: 2px solid #999;
+      border-radius: 50%;
+      @include transition(border-color);
+      
+      i {
+        position: absolute;
+        left: 3px;
+        top: 3px;
+        width: 12px;
+        height: 12px;
+        border-radius: 50%;
+        transform: scale(0);
+        background-color: $color-accent;
+        @include transition(transform);
+      }
+    }
+
+    &__label {
+      font-size: 16px;
+      line-height: 24px;
+      font-weight: 500;
+      color: $color-main;
+      margin-left: 8px;
+
+      img {
+        display: block;
+      }
+    }
+
+    input {
+      position: absolute;
+      opacity: 0;
+      &:checked ~ {
+        .control-radio__icon {
+          border-color: $color-accent;
+          i {
+            transform: scale(1);
+          }
+        }
+      }
+      &:disabled ~ {
+        .control-radio {
+          &__icon {
+            background-color: $color-border;
+            border-color: $color-btn-primary-outline-disable;
+          }
+        }
+      }
+    }
+  } 
+  &-radio-color {
+    display: inline-flex;
+    align-items: center;
+    position: relative;
+    cursor: pointer;
+
+    label.error {
+      display: none !important;
+    }
+
+    @media (any-hover: hover) { 
+      &:hover {
+        .control-radio-color__icon {
+          border-color: $color-border-hover;
+        }
+      }
+    }
+
+    &__icon {
+      position: relative;
+      width: 32px;
+      height: 32px;
+      min-width: 32px;
+      border-radius: 50%;
+      border: 1px solid transparent;
+      @include transition(border-color);
+      
+      i {
+        position: absolute;
+        left: 5px;
+        top: 5px;
+        width: 20px;
+        height: 20px;
+        border-radius: 50%;
+        
+      }
+    }
+
+    &__label {
+      font-size: 16px;
+      line-height: 24px;
+      font-weight: 500;
+      color: $color-main;
+      margin-left: 8px;
+    }
+
+    input {
+      position: absolute;
+      opacity: 0;
+      &:checked ~ {
+        .control-radio-color__icon {
+          border-color: $color-accent;
+        }
+      }
+      &:disabled ~ {
+        .control-radio {
+          &__icon {
+            background-color: $color-border;
+            border-color: $color-btn-primary-outline-disable;
+          }
+        }
+      }
+    }
+
+    &-group {
+      display: flex;
+      flex-wrap: wrap;
+
+      .control-radio-color {
+        margin-right: 16px;
+      }
+    }
+  } 
+  &-number {
+    width: 152px;
+    position: relative;
+
+    @media (any-hover: hover) { 
+      &:hover {
+        input {
+          border-color: $color-border-hover;
+        }
+      }
+    }
+
+    input {
+      display: block;
+      width: 100%;
+      border: none;
+      padding: 9px 47px;
+      text-align: center;
+      font: 16px/24px 'Montserrat', sans-serif;
+      font-weight: 500;
+      -moz-appearance: none;
+           appearance: none;
+      -webkit-appearance: none;
+      border: 1px solid $color-border;
+      border-radius: $border-radius;
+      @include transition(border-color);
+
+      &:focus {
+        border-color: $color-main;
+      }
+    }
+
+    &__btn {
+      position: absolute;
+      padding-top: 9px;
+      padding-bottom: 9px;
+      width: 47px;
+      display: flex;
+      justify-content: center;
+      cursor: pointer;
+      top: 1px;
+
+      &._dec {
+        padding-left: 1px;
+        padding-right: 12px;
+        left: 1px;
+      }
+      &._inc {
+        padding-left: 12px;
+        padding-right: 11px;
+        right: 1px;
+      }
+    }
+  }
+  &-rating {  
+    .rating {
+      display: inline-flex;
+      flex-direction: row-reverse;
+      vertical-align: top;
+      margin-left: -4px;
+      margin-right: -4px;
+    }
+
+    label.error {
+      display: block;
+      font-size: 16px;
+      line-height: 24px;
+      color: $color-accent;
+      padding-top: 4px;
+    }
+
+    input{
+      position: absolute;
+      cursor: pointer;
+      opacity: 0;
+
+      &:checked ~ .control-rating__icon {
+        background-image: url(../img/icons/star-on.svg);
+      }
+      @media (any-hover: hover) { 
+        &:hover ~ .control-rating__icon{
+          background-image: url(../img/icons/star-on.svg);
+        }
+      }
+    }
+
+    &__icon {
+      cursor: pointer;
+      width: 32px;
+      height: 24px;
+      background-repeat: no-repeat;
+      background-image: url(../img/icons/star-off.svg);
+      background-position: center center;
+      padding: 0 4px;
+      @include breakpoint('mobile') {
+      }
+      @include breakpoint('tablet-up') {
+      }
+    
+      @media (any-hover: hover) { 
+        &:hover{
+          & ~ .control-rating__icon,& {
+            background-image: url(../img/icons/star-on.svg);
+          }        
+        }
+      }
+    }
+  }
+  &-select {
+    select:not(.select2-hidden-accessible) {
+      display: block;
+      opacity: 0;
+      height: 44px;
+      -webkit-appearance: none;
+      appearance: none;
+    }
+    .woocommerce-input-wrapper {
+      display: block;
+    }
+    .select2-container {
+      display: block;
+
+      &--default {
+        .select2-selection--single {
+          border-radius: $border-radius;
+          border: 1px solid $color-border;
+          height: 44px;
+          @include transition(border-color);
+  
+          @media (any-hover: hover) { 
+            &:hover {
+              border-color: $color-border-hover;
+            }
+          }
+  
+          .select2-selection__placeholder {
+            color: $color-light;
+          }
+  
+          .select2-selection__rendered {
+            padding: 9px 55px 9px 15px;
+            font-size: 16px;
+            line-height: 24px;
+          }
+          .select2-selection__arrow {
+            width: 24px;
+            height: 24px;
+            top: 10px;
+            right: 16px;
+            background: url(../img/icons/chevron-down.svg) no-repeat transparent center center;
+            @include transition(transform);
+  
+            b {
+              display: none;
+            }
+          }
+        }
+        &.select2-container--open .select2-selection--single {
+          border-color: $color-main;
+  
+          .select2-selection__arrow {
+            transform: rotate(-180deg);
+          }
+        }
+      }
+    }
+  }
+  &-checkbox {
+    display: inline-flex;
+    align-items: center;
+    position: relative;
+    cursor: pointer;
+    vertical-align: top;
+
+    @media (any-hover: hover) { 
+      &:hover {
+        ._unchecked {
+          border-color: #747A83;
+        }
+      }
+    }
+
+    label.error {
+      display: none !important;
+    }
+
+    &__icon {
+      position: relative;
+      width: 24px;
+      height: 24px;
+      min-width: 24px;
+      margin-right: 8px;
+      i {
+        position: absolute;
+        
+        opacity: 0;
+      }
+
+      ._checked {
+        opacity: 0;
+        left: 0px;
+        top: 0px;
+        width: 24px;
+        height: 24px;
+        background-image: url(../img/icons/check-on.svg);
+      }
+      ._unchecked {
+        opacity: 1;
+        width: 20px;
+        height: 20px;
+        left: 2px;
+        top: 2px;
+        border: 2px solid $color-border-hover;
+        border-radius: 3px;
+        @include transition(border-color);
+      }
+    }
+
+    &__label {
+      font-size: 16px;
+      line-height: 24px;
+      color: $color-main;
+      a {
+        font-weight: 600;
+        text-decoration: underline;
+        color: inherit;
+        display: inline-block;
+        vertical-align: top;
+  
+        @media (any-hover: hover) { 
+          &:hover {
+            text-decoration: none;
+          }
+        }
+      }
+    }
+
+    input {
+      position: absolute;
+      opacity: 0;
+      &:checked ~ {
+        .control-checkbox__icon {
+          ._checked {
+            opacity: 1;
+          }
+  
+          ._unchecked {
+            opacity: 0;
+          }
+        }
+      }
+      &:disabled ~ {
+        .control-checkbox {
+          &__icon {
+            opacity: 0.3;
+          }
+        }
+      }
+      &.error ~ {
+        .control-checkbox {
+          &__icon {
+            ._unchecked {
+              background-image: url(../img/icons/check-off-error.svg);
+            }
+          }
+          &__label {
+            color: $color-accent;
+          }
+        }
+      }
+    }
+  }
+  &-slider-range {
+    .irs--flat {
+      height: 24px;
+
+      .irs {
+        &-bar {
+          top: 11px;
+          height: 2px;
+          background: $color-accent;
+          border-radius: $border-radius;
+        }
+        &-line {
+          top: 11px;
+          height: 2px;
+          background: $color-border;
+          border-radius: $border-radius;
+        }
+        &-handle {
+          top: 0;
+          width: 24px;
+          height: 24px;
+          border-radius: 50%;
+          border: 1px solid $color-border-dark;
+          background: #FFFFFF;
+          cursor: pointer;
+  
+          i {
+            display: none;
+          }
+        }
+      }
+    }
+  }
+}
+
+.select2-container--default .select2 {
+  &-dropdown {
+    margin-top: -1px;
+    border-style: solid;
+    border-width: 1px;
+    border-color: #fff $color-main $color-main;
+    border-radius: 0 0 $border-radius $border-radius;
+
+    &.modal-select {
+      z-index: 1165;
+    }
+
+    &.select2-dropdown--above {
+      margin-top: 1px;
+      border-radius: $border-radius $border-radius 0 0;
+      border-bottom-color: #fff;
+      border-top-color: $color-main;
+    }
+  }
+  &-results {
+    &__option {
+      cursor: pointer;
+      padding: 10px 15px;
+      font-size: 16px;
+      line-height: 24px;
+      color: $color-main;
+      @include transition(background-color, color);
+
+      @media (any-hover: hover) { 
+        &:hover {
+          background-color: $color-border !important;
+        }
+      }
+
+      &.select2-results__option--highlighted {
+        color: $color-main;
+        background-color: $color-border !important;
+      }
+
+      &.select2-results__option--selected, &[data-selected="true"] {
+        background-color: $color-main !important;
+        color: #fff !important;
+      }
+      &.select2-results__option--selectable {
+        background-color: transparent;
+        color: $color-main;
+      }
+    }
+  }
+}

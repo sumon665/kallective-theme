@@ -1,0 +1,535 @@
+# Copyright (C) 2020 Automattic
+# This file is distributed under the GNU General Public License v2 or later.
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: _s 1.0.0\n"
+"Report-Msgid-Bugs-To: https://wordpress.org/support/theme/_s\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"POT-Creation-Date: 2021-07-16 12:30+0000\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"X-Generator: Loco https://localise.biz/\n"
+"X-Domain: _s\n"
+"Language: \n"
+"Plural-Forms: nplurals=INTEGER; plural=EXPRESSION;"
+
+#. used between list items, there is a space after the comma
+#: inc/template-tags.php:63
+msgid ", "
+msgstr ""
+
+#: page-career.php:55
+msgid "<span>Show</span> filters"
+msgstr ""
+
+#: page-sales.php:14
+msgid "<span>Show</span>&nbsp;more information"
+msgstr ""
+
+#: functions.php:54 footer.php:16
+msgid "About"
+msgstr ""
+
+#: template-parts/account-memberships.php:6
+msgid "Active membership:"
+msgstr ""
+
+#: template-parts/card-product.php:17
+msgid "Add to favorites"
+msgstr ""
+
+#: functions.php:131
+msgid "Add widgets here."
+msgstr ""
+
+#. Author of the theme
+msgid "Anonymous"
+msgstr ""
+
+#: page-career.php:44
+msgid "Apply"
+msgstr ""
+
+#: 404.php:19
+msgid "Back to catalog"
+msgstr ""
+
+#: page-membership.php:64
+msgid "Become a member"
+msgstr ""
+
+#: page-contact.php:41
+msgid "Become A Vendor"
+msgstr ""
+
+#: footer.php:39
+msgid "Become an insider and find out about our upcoming offers first!"
+msgstr ""
+
+#: functions.php:55 footer.php:24
+msgid "Business"
+msgstr ""
+
+#. Name of the template
+msgid "Cabinet"
+msgstr ""
+
+#: template-parts/account-memberships.php:64
+msgid "Cancel"
+msgstr ""
+
+#. Name of the template
+msgid "Cart"
+msgstr ""
+
+#. Name of the template
+msgid "Challenges"
+msgstr ""
+
+#: page-career.php:89
+msgid "Choose Department"
+msgstr ""
+
+#: template-parts/filterbar-products.php:7
+msgid "Clear filters"
+msgstr ""
+
+#: page-about.php:31
+msgid "Collective Impact is the key to unlocking a brighter future for all."
+msgstr ""
+
+#: comments.php:68
+msgid "Comments are closed."
+msgstr ""
+
+#. 1: comment count number, 2: title.
+#: comments.php:41
+msgctxt "comments title"
+msgid "%1$s thought on &ldquo;%2$s&rdquo;"
+msgid_plural "%1$s thoughts on &ldquo;%2$s&rdquo;"
+msgstr[0] ""
+msgstr[1] ""
+
+#: template-parts/account-memberships.php:53
+msgid "Confirmation"
+msgstr ""
+
+#: footer.php:35
+msgid "Congratulations!"
+msgstr ""
+
+#: page-career.php:112
+msgid "Contact us"
+msgstr ""
+
+#. %s: Name of current post. Only visible to screen readers
+#: template-parts/content.php:40
+msgid "Continue reading<span class=\"screen-reader-text\"> \"%s\"</span>"
+msgstr ""
+
+#: page-challenges.php:23
+msgid "Current Challenges"
+msgstr ""
+
+#: page-raffles.php:23
+msgid "Current Raffles"
+msgstr ""
+
+#: page-career.php:88
+msgid "Department"
+msgstr ""
+
+#: template-parts/account-memberships.php:61
+msgid ""
+"Do you really would like to stop your membership? <br/>Your prices will be "
+"returned to usual mode."
+msgstr ""
+
+#: page-contact.php:28
+msgid "Drop us a line"
+msgstr ""
+
+#: page-track_order.php:31
+msgid "E-mail"
+msgstr ""
+
+#. %s: Name of current post. Only visible to screen readers
+#: inc/template-tags.php:100
+msgid "Edit <span class=\"screen-reader-text\">%s</span>"
+msgstr ""
+
+#: page-contact.php:30
+msgid "Email Us"
+msgstr ""
+
+#: page-track_order.php:26
+msgid "Enter your order ID here"
+msgstr ""
+
+#: page-career.php:21
+msgid "Explore the Careers"
+msgstr ""
+
+#: archive-faq.php:41
+msgid "FAQ Topics"
+msgstr ""
+
+#: archive-faq.php:30 archive-faq.php:37 archive-faq.php:60
+msgid "FAQ’s"
+msgstr ""
+
+#: template-parts/account-favorites.php:1
+msgid "Favorites"
+msgstr ""
+
+#: page-career.php:54
+msgid "Filter By"
+msgstr ""
+
+#: page-about.php:40
+msgid "Follow us on the social networks:"
+msgstr ""
+
+#: page-about.php:30
+msgid "Founded With a Mission"
+msgstr ""
+
+#: template-parts/account-waitlist.php:25
+msgid "Go to shopping"
+msgstr ""
+
+#: functions.php:53 footer.php:8
+msgid "Help"
+msgstr ""
+
+#: page-career.php:113
+msgid ""
+"If you have any questions about any of our positions, please reach out to us."
+msgstr ""
+
+#: page-contact.php:48
+msgid ""
+"Interested in working with us, or have a question about our marketplace? Go "
+"ahead and drop us a line and we’ll get back to you soon."
+msgstr ""
+
+#: template-parts/content-none.php:44
+msgid ""
+"It seems we can&rsquo;t find what you&rsquo;re looking for. Perhaps "
+"searching can help."
+msgstr ""
+
+#: template-parts/account-waitlist.php:27
+msgid "Item will upcoming soon"
+msgstr ""
+
+#: template-parts/filterbar-products.php:4
+msgid "Items choosen"
+msgstr ""
+
+#: page-career.php:61
+msgid "Job Title"
+msgstr ""
+
+#: page-challenges.php:50 page-raffles.php:64
+#: template-parts/account-raffles.php:6
+#: template-parts/account-memberships.php:45
+msgid "Join now"
+msgstr ""
+
+#: header.php:35
+msgid "Join Now to Access Savings"
+msgstr ""
+
+#: template-parts/card-product.php:29
+#: template-parts/account-recommendations.php:30
+#: template-parts/account-favorites.php:31
+msgid "Learn more"
+msgstr ""
+
+#. %s: post title
+#: inc/template-tags.php:83
+msgid "Leave a Comment<span class=\"screen-reader-text\"> on %s</span>"
+msgstr ""
+
+#. used between list items, there is a space after the comma
+#: inc/template-tags.php:70
+msgctxt "list item separator"
+msgid ", "
+msgstr ""
+
+#: page-new-arrivals.php:43 page-sales.php:44 front-page.php:111
+msgid "Load more items"
+msgstr ""
+
+#: page-career.php:74
+msgid "Location"
+msgstr ""
+
+#: archive-faq.php:27
+msgid "Main page"
+msgstr ""
+
+#: page-contact.php:33
+msgid "Member Inquiries"
+msgstr ""
+
+#. Name of the template
+#: template-parts/account-memberships.php:3
+msgid "Memberships"
+msgstr ""
+
+#: page-contact.php:47
+msgid "Message us"
+msgstr ""
+
+#. Name of the template
+msgid "New Arrivals"
+msgstr ""
+
+#: header.php:115 page-new-arrivals.php:11 front-page.php:37 front-page.php:86
+msgid "New arrivals"
+msgstr ""
+
+#: front-page.php:49 front-page.php:99
+msgid "New collections"
+msgstr ""
+
+#: single.php:24
+msgid "Next:"
+msgstr ""
+
+#: template-parts/content-none.php:14
+msgid "Nothing Found"
+msgstr ""
+
+#. 1: title.
+#: comments.php:35
+msgid "One thought on &ldquo;%1$s&rdquo;"
+msgstr ""
+
+#: 404.php:17
+msgid "Oops!"
+msgstr ""
+
+#: page-track_order.php:25
+msgid "Order ID"
+msgstr ""
+
+#: page-about.php:28
+msgid "Our Story So Far"
+msgstr ""
+
+#: template-parts/content.php:53
+msgid "Pages:"
+msgstr ""
+
+#: page-contact.php:37
+msgid "Partnership Inquiries"
+msgstr ""
+
+#: template-parts/account-recommendations.php:1
+msgid "Personal recommendations"
+msgstr ""
+
+#. %s: post author.
+#: inc/template-tags.php:46
+msgctxt "post author"
+msgid "by %s"
+msgstr ""
+
+#. %s: post date.
+#: inc/template-tags.php:30
+msgctxt "post date"
+msgid "Posted on %s"
+msgstr ""
+
+#. 1: list of categories.
+#: inc/template-tags.php:66
+msgid "Posted in %1$s"
+msgstr ""
+
+#: single.php:23
+msgid "Previous:"
+msgstr ""
+
+#: functions.php:52
+msgid "Primary"
+msgstr ""
+
+#: footer.php:67
+msgid "Privacy policy"
+msgstr ""
+
+#: template-parts/account-raffles.php:31
+msgid "Raffle name:"
+msgstr ""
+
+#. Name of the template
+msgid "Raffles"
+msgstr ""
+
+#: template-parts/account-raffles.php:1
+msgid "Raffles Dashboard"
+msgstr ""
+
+#: template-parts/account-raffles.php:12
+msgid "Raffles tickets"
+msgstr ""
+
+#. 1: link to WP admin new post page.
+#: template-parts/content-none.php:24
+msgid ""
+"Ready to publish your first post? <a href=\"%1$s\">Get started here</a>."
+msgstr ""
+
+#. %s: search query.
+#: search.php:21
+msgid "Search Results for: %s"
+msgstr ""
+
+#: header.php:103
+msgid "Shop all"
+msgstr ""
+
+#: front-page.php:14 template-parts/account-waitlist.php:6
+#: template-parts/account-recommendations.php:43
+#: template-parts/account-favorites.php:7
+msgid "Shop now"
+msgstr ""
+
+#: page-career.php:99
+msgid "Show results"
+msgstr ""
+
+#: functions.php:129
+msgid "Sidebar"
+msgstr ""
+
+#: template-parts/content-none.php:37
+msgid ""
+"Sorry, but nothing matched your search terms. Please try again with some "
+"different keywords."
+msgstr ""
+
+#: template-parts/account-raffles.php:34
+msgid "Start date:"
+msgstr ""
+
+#. Name of the template
+msgid "Static Form Page"
+msgstr ""
+
+#. 1: list of tags.
+#: inc/template-tags.php:73
+msgid "Tagged %1$s"
+msgstr ""
+
+#: footer.php:68 footer.php:97
+msgid "Terms & conditions"
+msgstr ""
+
+#: footer.php:94
+msgid "The Kallective 2020. All rights reserved"
+msgstr ""
+
+#: template-parts/account-raffles.php:29
+msgid "Ticket"
+msgstr ""
+
+#: template-parts/account-raffles.php:37
+msgid "Ticket status:"
+msgstr ""
+
+#: page-track_order.php:22
+msgid ""
+"To track your order please enter your Order ID in the box below and press "
+"the \"Track Order\" button. This was given to you on your receipt and in the "
+"confirmation email you should have received."
+msgstr ""
+
+#: template-parts/account-raffles.php:40
+msgid "Total Amount:"
+msgstr ""
+
+#. Name of the template
+#: page-track_order.php:36
+msgid "Track Order"
+msgstr ""
+
+#: page-track_order.php:19
+msgid "Track Your Order"
+msgstr ""
+
+#: template-parts/account-memberships.php:76
+msgid "Understand"
+msgstr ""
+
+#: 404.php:18
+msgid "Unfortunately, we can not find this page"
+msgstr ""
+
+#: template-parts/account-memberships.php:35
+#: template-parts/account-memberships.php:65
+msgid "Unsubscribe"
+msgstr ""
+
+#: template-parts/account-waitlist.php:1
+msgid "Waitlist"
+msgstr ""
+
+#: page-career.php:106
+msgid ""
+"We don't currently have any open positions. Feel free to reach out to us to "
+"introduce yourself in the meantime."
+msgstr ""
+
+#: page-challenges.php:63 page-raffles.php:76
+msgid "We don’t have an active challenges now, but it’ll be here soon!"
+msgstr ""
+
+#: page-membership.php:57
+msgid "You can unsubscribe at my cabinet page."
+msgstr ""
+
+#: template-parts/account-raffles.php:5
+msgid "You don't have a active raffles yet."
+msgstr ""
+
+#: template-parts/account-memberships.php:44
+msgid "You don't have a membership yet."
+msgstr ""
+
+#: template-parts/account-recommendations.php:42
+msgid "You don\\t have active personal recommendations."
+msgstr ""
+
+#: template-parts/account-waitlist.php:5
+msgid "You have no any items in waitlist yet."
+msgstr ""
+
+#: page-membership.php:55
+msgid "You have this membership"
+msgstr ""
+
+#: template-parts/account-favorites.php:6
+msgid "You haven't saved any items yet."
+msgstr ""
+
+#: header.php:33
+msgid "You're a member"
+msgstr ""
+
+#: template-parts/account-memberships.php:73
+msgid ""
+"Your membership has been stopped. <br/>Money will not be charged from your "
+"card in a next month."
+msgstr ""
+
+#: footer.php:36
+msgid "Your promocode has been sent to your email."
+msgstr ""

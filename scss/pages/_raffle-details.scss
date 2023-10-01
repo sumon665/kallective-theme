@@ -1,0 +1,346 @@
+.raffle {
+  &-layout {
+    background-color: #fff;
+
+    @include breakpoint('mobile') {
+      margin-left: -16px;
+      margin-right: -16px;
+      padding: 40px 16px;
+    }
+
+    @include breakpoint('tablet-up') {
+      padding: 40px;
+    }
+
+    &-info {
+      @include breakpoint('desktop') {
+        display: flex;
+      }
+
+      &__img {
+        border-radius: $border-radius;
+        overflow: hidden;
+        position: relative;
+        @include breakpoint('mobile') {
+          padding-bottom: 92.7%;
+        }
+        @include breakpoint('tablet') {
+          padding-bottom: 93.4%;
+        }
+        @include breakpoint('desktop-down') {
+          margin-top: 40px;
+          position: relative;
+          height: 0;
+        }
+        @include breakpoint('desktop') {
+          flex: 0 0 600px;
+          min-width: 0;
+          height: 700px;
+        } 
+
+        &-logo {
+          position: absolute;
+          left: 0;
+          bottom: 0;
+          z-index: 1;
+          width: 178px;
+          height: 44px;
+          background: url(../img/icons/logo-white.svg) no-repeat $color-main center center;
+        }
+      }
+      &__desc {
+        @include breakpoint('desktop') {
+          padding-left: 40px;
+        } 
+      }
+    }
+  }
+  &-details {
+    &-img {
+      position: relative;
+      height: 100%;
+      width: 100%;
+
+      @include breakpoint('desktop-down') {
+        position: absolute;
+        left: 0;
+        top: 0;
+      }
+
+      img {
+        width: 100%;
+        height: 100%;
+        -o-object-fit: cover;
+           object-fit: cover;
+      }
+    }
+    &__name {
+      font-size: 24px;
+      line-height: 32px;
+      font-weight: 600;
+    }
+    &__desc {
+      margin-top: 8px;
+
+      @include breakpoint('desktop') {
+        max-width: 364px;
+      }
+
+      strong {
+        color: $color-accent;
+        font-weight: 600;
+
+        a {
+          font-weight: inherit;
+          color: inherit;
+        }
+      }
+    }
+    &-period {
+      margin-top: 32px;
+
+      &__row {
+        padding-top: 8px;
+        span {
+          font-weight: 700;
+          color: $color-light;
+        }
+      }
+    }
+
+    &-timer {
+      margin-top: 8px;
+      display: flex;
+      justify-content: center;
+      border: 1px solid $color-main;
+      border-radius: $border-radius;
+      padding: 23px 0;
+      
+      @include breakpoint('tablet-up') {
+        width: 288px;
+      }
+
+      &__col {
+        display: flex;
+        flex-direction: column;
+        
+        &:last-child .raffle-details-timer__value {
+          min-width: 33px;
+        }
+
+        &:not(:last-child) .raffle-details-timer__value {
+          padding-right: 24px;  
+          min-width: 57px;        
+          background: url(../img/icons/countdown-divider.svg) no-repeat transparent right center;
+        }
+      }
+
+      &__value {
+        font-size: 24px;
+        line-height: 32px;
+        font-weight: 600;
+      }
+
+      &__label {
+        font-size: 14px;
+        line-height: 16px;
+        color: $color-light;
+      }
+
+      &-block {
+        margin-top: 40px;
+      }
+    }
+
+    &-tickets {
+      margin-top: 32px;
+
+      &__row {
+        padding-top: 8px;
+      }
+    }
+
+    &-progress {
+      margin-top: 40px;
+
+      @include breakpoint('tablet-up') {
+        width: 288px;
+      }
+
+      &__label {
+        b {
+          font-weight: 600;
+        }
+      }
+
+      &__tickets-left {
+        margin-top: 8px;
+        font-weight: 600;
+        font-size: 14px;
+        color: $color-light;
+      }
+    }
+
+    &-winners {
+      margin-top: 40px;
+    }
+
+    &-join {
+      margin-top: 16px;
+      @include breakpoint('tablet-up') {
+        width: 288px;
+      }
+    }
+  }
+  &-progress {
+    margin-top: 8px;
+    border-radius: $border-radius;    
+    background-color: $color-border;
+    height: 24px;
+    position: relative;
+    color: #9399a2;
+
+    &__value {
+      overflow: hidden;      
+      position: absolute;
+      left: 0;
+      top: 0;
+      right: 0;
+      bottom: 0; 
+      color: #fff;
+      background-color: $color-accent;
+      border-radius: $border-radius; 
+      z-index: 1;  
+    }
+
+    &__txt {
+      font-size: 12px;
+      line-height: 16px;
+      font-weight: 600;
+      color: inherit;
+      text-align: center;
+      padding: 4px 0;
+      position: absolute;
+      left: 0;
+      top: 0;
+      right: 0;
+      bottom: 0;
+
+      @include breakpoint('mobile') {
+        width: calc(100vw - 32px);
+      }
+
+      @include breakpoint('tablet-up') {
+        width: 288px;
+      }
+    }
+  }
+  &-tabs {
+    margin-top: 80px;
+
+    .tabs {
+      &-header {
+        @include breakpoint('mobile') {
+          border: none;
+        }
+        &-wrap {
+          @include breakpoint('mobile') {}
+        }
+        &-list {
+          @include breakpoint('mobile') {
+            height: auto;
+            flex-direction: row;
+            margin-left: -16px;
+          }
+          &__item {
+            @include breakpoint('mobile') {
+              padding: 9px;
+              text-align: center;
+              border: 1px solid $color-main;
+              border-radius: 4px;
+              flex: 50%;
+              margin-left: 16px;
+            }
+            @include breakpoint('tablet-up') {
+              flex: 208px 0 0;
+            }
+          }
+        }
+      }
+    }
+
+    &-description {
+      padding-top: 16px;
+
+      @include breakpoint('desktop') {
+        max-width: 908px;
+      }
+      
+      &-title {
+        font-size: 24px;
+        line-height: 32px;
+        font-weight: 500;
+
+        strong {
+          font-weight: 600;
+        }
+      }
+
+      &-note {
+        margin-top: 24px;
+      }
+
+      &-item {
+        margin-top: 24px;
+
+        &__label {
+          color: $color-light;
+          font-weight: 700;
+        }
+
+        &__value {
+
+          b, strong {
+            font-weight: 600;
+          }
+        }
+      }
+
+      &-btm {
+        padding-top: 56px;
+
+        p {
+          margin-top: 24px;
+        }
+      }
+    }
+  }
+}
+
+.related-raffles-section {
+  margin-top: 40px;
+  background-color: #fff;
+  padding-top: 40px;
+  padding-bottom: 40px;   
+  overflow: hidden; 
+
+  @include breakpoint('mobile') {
+    margin-left: -16px;
+    margin-right: -16px;
+  }
+
+  .challenges-list-wrap {
+    margin: 0;
+  }
+
+  &__title {
+    font-size: 24px;
+    line-height: 24px;
+    @include breakpoint('mobile') {
+      padding-left: 16px;
+    }
+    @include breakpoint('tablet-up') {
+      padding-left: 40px;
+    }
+  }
+}

@@ -1,0 +1,62 @@
+.breadcrumbs {
+  display: flex;
+  flex-wrap: wrap;
+  color: $color-main;
+
+  &__item {
+    @include breakpoint('desktop-down') {
+      &:not(:nth-last-child(2)) {
+        display: none;
+      }
+      &:nth-last-child(2) {
+        .breadcrumbs__link {
+          padding-left: 32px;
+          background: url(../img/icons/chevron-left.svg) no-repeat left center;
+        }
+      }
+    }
+    @include breakpoint('desktop') {
+      &:not(:last-child) {
+        padding-right: 40px;
+        background: url(../img/icons/chevron-breadcrumbs.svg) no-repeat right 8px center;
+      }
+    }
+  }
+
+  &__link {
+    display: flex;
+    font-size: 16px;
+    line-height: 24px;
+    @include transition(color);
+
+    @media (any-hover: hover) { 
+      &:hover {
+        color: $color-main;
+        text-decoration: underline;
+      }
+    }
+
+    @include breakpoint('desktop-down') {
+      color: $color-main;
+    }
+    @include breakpoint('desktop') {
+      color: $color-light;
+    }
+  }
+
+  &__current {
+    display: flex;
+    font-size: 16px;
+    line-height: 24px;
+    cursor: default;
+  }
+
+  &-section {
+    @include breakpoint('mobile') {
+      padding: 20px 0;
+    }
+    @include breakpoint('tablet-up') {
+      padding: 28px 0;
+    }
+  }
+}

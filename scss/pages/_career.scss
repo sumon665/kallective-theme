@@ -1,0 +1,231 @@
+.career {
+  &-section {
+    background-color: #fff;
+    padding-bottom: 40px;
+    @include breakpoint('mobile') {
+      padding-left: 16px;
+      padding-right: 16px;
+      margin-left: -16px;
+      margin-right: -16px;
+    }
+    @include breakpoint('tablet-up') {
+      padding-left: 40px;
+      padding-right: 40px;
+    }
+  }
+  &-top {
+    padding-top: 40px;
+    padding-bottom: 40px;
+    font-size: 24px;
+    line-height: 32px;
+  }
+  &-layout {
+    display: flex;
+    position: relative;
+
+    @include breakpoint('desktop-down') {
+      flex-direction: column-reverse;
+    }
+
+    @include breakpoint('desktop') {
+      margin-top: 40px;
+      justify-content: space-between;
+      align-items: flex-start;
+    }
+
+    &__list {
+      @include breakpoint('desktop-down') {
+        margin-top: 40px;
+      }
+      @include breakpoint('desktop') {
+        flex: 0 0 608px;
+      }
+    }
+    &__filters {
+      @include breakpoint('desktop-down') {
+        position: relative;
+        height: 24px;
+      }
+      @include breakpoint('desktop') {
+        position: -webkit-sticky;
+        position: sticky;
+        top: 120px;
+        flex: 0 0 418px;
+      }
+    }
+  }
+  &-list {    
+    &-item {
+      background-color: $color-bg-light;
+      border: 1px solid $color-border-dark;
+      @include breakpoint('mobile') {
+        padding: 15px;
+
+        &:not(:first-child) {
+          margin-top: 32px;
+        }
+      }
+      @include breakpoint('tablet-up') {
+        padding: 39px;
+        border-radius: $border-radius;
+
+        &:not(:first-child) {
+          margin-top: 24px;
+        }
+      }
+
+      &__title {
+        @include breakpoint('mobile') {
+          font-size: 16px;
+          line-height: 24px;
+        }
+        @include breakpoint('tablet-up') {
+          font-weight: 600;
+          font-size: 24px;
+          line-height: 32px;
+        }
+      }
+      &__desc {
+        font-size: 16px;
+        line-height: 24px;
+
+        @include breakpoint('mobile') {
+          margin-top: 24px;
+        }
+        @include breakpoint('tablet-up') {
+          margin-top: 16px;
+        }
+      }
+
+      &__btn {
+        @include breakpoint('mobile') {
+          margin-top: 24px;
+        }
+        @include breakpoint('tablet-up') {
+          margin-top: 16px;
+          width: 208px;
+        }
+      }
+    }
+  }
+  &-filters {
+    @include breakpoint('desktop') {
+      border: 1px solid $color-border-hover;
+      border-radius: $border-radius;
+    }
+    &-toggle {
+      @include breakpoint('desktop-down') {        
+        font-weight: 600;
+        font-size: 16px;
+        line-height: 24px;
+        cursor: pointer;
+        display: inline-block;
+        vertical-align: top;
+        position: relative;
+        padding-right: 32px;
+
+        &:after {
+          content: '';
+          display: block;
+          position: absolute;
+          right: 0;
+          top: 50%;
+          margin-top: -12px;
+          width: 24px;
+          height: 24px;
+          background: url(../img/icons/chevron-down.svg) no-repeat transparent center center;
+          @include transition(transform);
+        }
+
+        &._opened {
+          &:after {
+            transform: rotate(-180deg);
+          }
+        }
+      }
+    }
+    &__header {
+      font-weight: 600;      
+      @include breakpoint('desktop') {
+        padding: 23px;        
+        font-size: 24px;
+        line-height: 32px;
+        border-bottom: 1px solid $color-border;
+      }
+    }
+    &__body {
+      @include breakpoint('mobile') {
+        margin: 0 -16px;
+        padding: 24px 16px;
+      }
+      @include breakpoint('tablet') {
+        margin: 0 -40px;
+        padding: 24px 40px 40px;
+      }
+      @include breakpoint('desktop-down') {
+        display: none;
+        background-color: #fff;
+        box-shadow: 0px 8px 16px rgba(0, 0, 0, 0.1);
+        border-radius: 0px 0px 4px 4px;
+      }
+      @include breakpoint('desktop') {
+        padding: 24px 23px 23px;
+        display: block !important;
+      }
+    }
+    &-row {
+      margin-bottom: 24px;
+
+      &-tablet {
+        @include breakpoint('tablet') {
+          display: flex;
+          margin: 0 -12px;
+
+          .career-filters-row {
+            flex: 50% 0 0;
+            padding: 0 12px;
+          }
+        }
+      }
+    }
+    &-apply {
+      width: 100%;
+    }
+  }
+  &-contact-section {
+    background-color: #fff;
+    margin-top: 40px;
+    padding-top: 40px;
+    padding-bottom: 40px;
+
+    @include breakpoint('mobile') {
+      padding-left: 16px;
+      padding-right: 16px;
+      margin-left: -16px;
+      margin-right: -16px;
+    }
+    @include breakpoint('tablet-up') {
+      padding-left: 40px;
+      padding-right: 40px;
+    }
+
+    .contact-form-section {
+      margin-top: 0;
+
+      @include breakpoint('desktop') {
+        background-position: right top 104px;
+      }
+
+      &__title {
+        @include breakpoint('mobile') {
+          font-size: 24px;
+          line-height: 32px;
+        }
+        @include breakpoint('tablet-up') {
+          font-size: 48px;
+          line-height: 64px;
+        }
+      }
+    }
+  }
+}

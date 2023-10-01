@@ -1,0 +1,168 @@
+.home {
+  &-slider {
+    position: relative;
+    @include breakpoint('mobile') {
+      margin-left: -16px;
+      margin-right: -16px;
+      padding-bottom: 104px;
+    }
+    @include breakpoint('tablet') {
+      padding-bottom: 144px;
+    }
+    @include breakpoint('desktop') {
+      &:not(.slick-initialized) {
+        overflow: hidden;
+        height: 592px;
+      }
+    }
+    &-section {
+      overflow: hidden;
+    }
+
+    .slick-dots {
+      position: absolute;
+      left: 0;
+      right: 0;
+      width: 100%;  
+      margin-left: auto;
+      margin-right: auto;
+      display: flex;      
+
+      @include breakpoint('mobile') {
+        padding-left: 32px;
+        padding-right: 32px;
+        bottom: 40px;
+      }
+      @include breakpoint('tablet') {
+        padding-left: 80px;
+        padding-right: 80px;
+        bottom: 80px;
+      }
+      @include breakpoint('desktop') {
+        max-width: 1200px;
+        bottom: 40px;
+      }
+
+      li {
+        display: flex;
+
+        &:not(:first-child) {
+          margin-left: 8px;
+        }
+
+        &.slick-active > span {
+          &:after {
+            background-color: $color-accent;
+          }
+        }
+      }
+
+      span {
+        display: flex;
+        width: 24px;
+        height: 24px;
+        position: relative;
+        cursor: pointer;
+
+        &:after {
+          content: '';
+          display: block;
+          position: absolute;
+          width: 8px;
+          height: 8px;
+          border-radius: 50%;
+          left: 8px;
+          top: 8px;
+          background-color: $color-border;
+          @include transition(background-color);
+        }
+      }
+
+      svg {
+        transform: rotate(-90deg);
+        display: none;
+        circle {
+          stroke: $color-accent;
+        }
+      }
+    }
+  }
+  &-slide-layout {
+    @include breakpoint('desktop') {
+      height: 592px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+
+    &__txt {
+      @include breakpoint('mobile') {
+        padding: 40px 16px 0 16px;
+      }
+      @include breakpoint('tablet') {
+        padding-top: 80px;
+      }
+      @include breakpoint('desktop') {
+        padding: 40px 80px 40px 0;
+      }
+      h2 {
+        @include breakpoint('mobile') {
+          font-size: 32px;
+          line-height: 40px;
+        }
+        @include breakpoint('tablet-up') {
+          font-size: 48px;
+          line-height: 64px;
+        }
+      }
+      p {
+        margin-top: 24px;
+        @include breakpoint('mobile') {
+          font-size: 16px;
+          line-height: 24px;
+        }
+        @include breakpoint('tablet-up') {
+          font-size: 24px;
+          line-height: 32px;
+        }
+      }
+      .btn-primary {
+        margin-top: 24px;
+        @include breakpoint('tablet-up') {
+          width: 168px;
+        }
+      }
+    }
+
+    &__img {
+      @include breakpoint('mobile') {
+        width: 100%;
+        padding-bottom: 57.5%;
+      }
+      @include breakpoint('tablet') {
+        width: 89.5%;
+        padding-bottom: 66.18%;
+      }
+      @include breakpoint('desktop-down') {
+        margin-top: 40px;
+        height: 0;
+        position: relative;
+      }
+      @include breakpoint('desktop') {
+        flex: 0 0 48.25%;
+        height: 100%;
+      }
+      img {
+        display: block;
+        width: 100%;
+        height: 100%;
+        -o-object-fit: cover;
+           object-fit: cover;
+
+        @include breakpoint('desktop-down') {
+          position: absolute;
+        }
+      }
+    }
+  }
+}

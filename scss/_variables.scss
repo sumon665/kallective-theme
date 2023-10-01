@@ -1,0 +1,33 @@
+$media-mobile-max-width: 767px;
+$media-tablet-max-width: 1232px;
+
+$border-radius: 4px;
+
+$color-main: #1D3557;
+$color-light: #9399A1;
+$color-accent: #E63946;
+$color-border: #E8ECEE;
+$color-border-dark: #D4D9DC;
+$color-border-light: #E6E8EC;
+$color-border-hover: #9399A2;
+$color-bg-light: #F8F8F8;
+
+$color-btn-primary: $color-accent;
+$color-btn-primary-hover: #CF2F3B;
+$color-btn-primary-active: #CD2E3A;
+$color-btn-primary-disable: #9399A2;
+
+$color-btn-primary-outline: $color-accent;
+$color-btn-primary-outline-hover: $color-accent;
+$color-btn-primary-outline-active: #CD2E3A;
+$color-btn-primary-outline-disable: #D4D9DC;
+
+$color-btn-secondary: $color-main;
+$color-btn-secondary-hover: #3F5370;
+$color-btn-secondary-active: #0E2444;
+$color-btn-secondary-disable: #D4D9DC;
+
+$color-btn-secondary-outline: $color-main;
+$color-btn-secondary-outline-hover: $color-main;
+$color-btn-secondary-outline-active: #162842;
+$color-btn-secondary-outline-disable: #D4D9DC;

@@ -1,0 +1,218 @@
+@import './variables';
+
+@mixin breakpoint($point) {
+  @if $point == 'mobile' {
+    @media (min-width: 0) and (max-width: $media-mobile-max-width) { @content ; }
+  }
+  @else if $point == 'tablet' {
+    @media (min-width: $media-mobile-max-width + 1) and (max-width: $media-tablet-max-width) { @content ; }
+  }
+  @else if $point == 'tablet-up' {
+    @media (min-width: $media-mobile-max-width + 1) { @content ; }
+  }
+  @else if $point == 'desktop' {
+    @media (min-width: $media-tablet-max-width + 1) { @content ; }
+  }
+  @else if $point == 'desktop-down' {
+    @media (max-width: $media-tablet-max-width) { @content ; }
+  }
+}
+
+@mixin transition($args...) {
+  transition-duration: .3s;
+  transition-timing-function: ease;
+  transition-property: $args;
+}
+
+@mixin btn() {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  font: 16px/24px 'Montserrat', sans-serif;
+  font-weight: 500;    
+  cursor: pointer;
+  position: relative;
+  text-decoration: none;
+  box-shadow: none;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+       appearance: none;
+  border-radius: $border-radius;
+
+  @include breakpoint('mobile') {
+    width: 100%;
+    padding-left: 16px;
+    padding-right: 16px;
+  }
+
+  &:disabled {
+    cursor: default;    
+  }
+
+  .icon-spinner {
+    display: none;
+  }
+
+  &._loading {
+    .btn-label {
+      display: none;
+    }
+    .icon-spinner {
+      display: block;
+      @include spinAnimation(1s);
+    }
+  }
+  &.icon-left {
+    .icon {
+      margin-right: 8px;
+    }
+  }
+}
+
+@mixin input {
+  display: block;
+  width: 100%;
+  border: 1px solid $color-border;
+  padding: 9px;
+  font: 16px/24px 'Montserrat', sans-serif;
+  font-weight: 500;
+  color: $color-main;
+  -moz-appearance: none;
+       appearance: none;
+  -webkit-appearance: none;
+  background-color: #fff;
+  border-radius: $border-radius;
+  -webkit-filter: none !important;
+          filter: none !important;
+  @include transition(border-color);
+  
+  @media (any-hover: hover) {
+    &:not(:disabled):not(:focus):not(:-moz-read-only):hover {
+      border-color: $color-border-hover;    
+    }
+    
+    &:not(:disabled):not(:focus):not(:read-only):hover {
+      border-color: $color-border-hover;      
+    }
+  }
+
+  &:disabled {
+    cursor: default;
+    color: $color-light;
+    background-color: $color-border;
+    -webkit-text-fill-color: currentcolor;
+  }
+
+  &:focus {
+    border-color: $color-main;
+  }
+
+  &:-webkit-autofill {
+    box-shadow: inset 0 0 0px 44px white;
+  }
+
+  @include placeholderInput($color-light);
+
+  &.error {
+    border-color: $color-accent !important;
+  }
+  
+}
+
+@mixin placeholderInput($color) {
+  &::-webkit-input-placeholder {
+    color: $color;
+    opacity: 1;
+  }
+  &::-moz-placeholder {
+    color: $color;
+    opacity: 1;
+  }
+  &:-ms-input-placeholder {
+    color: $color;
+    opacity: 1;
+  }
+  &:-moz-placeholder {
+    color: $color;
+    opacity: 1;
+  }
+}
+
+@mixin text-ellipsis {
+  max-width: 100%;
+  white-space: nowrap;  
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+@mixin spinAnimation($duration) {
+  -webkit-animation: spin $duration infinite linear;
+  animation: spin $duration infinite linear;
+
+  @-webkit-keyframes spin {
+    from {
+      transform:rotate(0deg);
+    }
+    to {
+      transform:rotate(360deg);
+    }
+  }
+
+  @keyframes spin {
+    from {
+      transform:rotate(0deg);
+    }
+    to {
+      transform:rotate(360deg);
+    }
+  }
+}
+
+@mixin woocommerceLoaderBg {
+  pointer-events: none;
+  cursor: default;
+
+  &:before {
+    content: '';
+    position: absolute;
+    left: 0;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    z-index: 2;            
+    background-color: rgba(#fff, .8);
+  }
+}
+
+@mixin woocommerceLoaderIcon {
+  cursor: default;
+
+  &:before, &:after {
+    content: '';
+    position: absolute;
+    left: 50%;
+    top: 50%;
+  }
+
+  &:before {
+    width: 48px !important;
+    height: 48px !important;    
+    transform: translate(-50%, -50%);       
+    box-shadow: 0px 2px 16px rgba(0, 0, 0, 0.08);
+    border-radius: $border-radius;
+    z-index: 3;
+    margin: 0 !important;
+    background: #FFFFFF !important;
+    -webkit-animation: none !important;
+            animation: none !important;
+  }
+
+  &:after {
+    width: 24px;
+    height: 24px;
+    margin: -12px 0 0 -12px;
+    background: url(../img/icons/spinner-accent.svg) no-repeat transparent center center;
+    @include spinAnimation(1s);
+    z-index: 4;
+  }
+}

@@ -1,0 +1,205 @@
+@import "variables";
+@import "mixins";
+
+* {
+  padding: 0;
+  margin: 0;
+  outline: none;
+  box-sizing: border-box;
+  -webkit-tap-highlight-color: transparent;
+}
+
+html,
+body {
+  width: 100%;
+  height: 100%;
+}
+
+body {
+  font-family: 'Montserrat', sans-serif;
+  font-weight: 500;
+  color: $color-main;
+  background-color: $color-bg-light;
+  overflow-x: hidden;
+  @include breakpoint('mobile') {
+    padding-top: 112px;
+  }
+  @include breakpoint('tablet-up') {
+    padding-top: 136px;
+  }
+}
+
+.site-wrap {
+  display: flex;
+  flex-direction: column;
+  min-height: 100%;
+  position: relative;
+}
+
+.page-content {
+  flex: 1;
+  padding-bottom: 80px;
+}
+
+
+ul {
+  list-style: none;
+}
+
+a {
+  text-decoration: none;
+}
+
+b, strong, h1, h2, h3, h4, h5, h5, h6 {
+  font-weight: 700;
+}
+
+.wrapper {
+  width: 100%;  
+  margin-left: auto;
+  margin-right: auto;
+  
+
+  @include breakpoint('mobile') {
+    padding-left: 16px;
+    padding-right: 16px;
+  }
+  @include breakpoint('tablet') {
+    padding-left: 80px;
+    padding-right: 80px;
+  }
+  @include breakpoint('desktop') {
+    max-width: 1200px;
+  }
+}
+
+p {
+  font-size: 16px;
+  line-height: 24px;
+}
+
+.visible {
+  &-mobile {
+    @include breakpoint('tablet-up') {
+      display: none !important;
+    }
+  }
+  &-desktop {
+    @include breakpoint('desktop-down') {
+      display: none !important;
+    }
+  }
+}
+
+.hidden {
+  &-mobile {
+    @include breakpoint('mobile') {
+      display: none !important;
+    }
+  }
+  &-tablet {
+    @include breakpoint('tablet') {
+      display: none !important;
+    }
+  }
+  &-desktop {
+    @include breakpoint('desktop') {
+      display: none !important;
+    }
+  }
+}
+
+.asterisk {
+  color: $color-accent;
+}
+
+.text-center {
+  text-align: center;
+
+  &-mobile {
+    @include breakpoint('mobile') {
+      text-align: center;
+    }
+  }
+}
+
+.color {
+  &-accent {
+    color: $color-accent;
+  }
+  &-light {
+    color: $color-light;
+  }
+}
+
+.blockUI.blockOverlay {
+  opacity: 1 !important;
+  background-color: rgba(#fff, .8) !important;
+
+  @include woocommerceLoaderIcon();
+}
+
+.woocommerce-error {
+  background-color: #fff;
+  border: 1px solid $color-accent;
+  border-radius: $border-radius;
+  padding: 15px 15px 15px 49px;
+  font-size: 16px;
+  line-height: 24px;
+  font-weight: 500;
+  color: $color-accent;
+
+  @include breakpoint('mobile') {
+    margin: 0 0 32px;
+  }
+  @include breakpoint('tablet-up') {
+    margin: 0 0 40px;
+  }
+
+  &:before {
+    content: '';
+    position: absolute;
+    left: 15px;
+    top: 15px;
+    width: 24px;
+    height: 24px;
+    background: url(../img/icons/alert-circle.svg) no-repeat transparent center center;
+  }
+}
+
+@import 'modules/header';
+@import 'modules/footer';
+@import 'modules/icons';
+@import 'modules/form-controls';
+@import 'modules/products';
+@import 'modules/cart-panel';
+@import 'modules/breadcrumbs';
+@import 'modules/related-products';
+@import 'modules/tabs';
+@import 'modules/modal';
+@import 'modules/pagination';
+@import 'modules/login-modal';
+@import 'modules/accordion';
+@import 'modules/faq-accordion';
+
+@import 'pages/home';
+@import 'pages/cart';
+@import 'pages/product-details';
+@import 'pages/404';
+@import 'pages/thanks';
+@import 'pages/privacy-terms';
+@import 'pages/about';
+@import 'pages/contact';
+@import 'pages/sale';
+@import 'pages/arrivals';
+@import 'pages/career';
+@import 'pages/cabinet';
+@import 'pages/track-order';
+@import 'pages/faq';
+@import 'pages/challenges';
+@import 'pages/raffle-details';
+@import 'pages/login';
+@import 'pages/memberships';
+@import 'pages/how-it-works';
+@import 'pages/ambassador';
+@import 'pages/purchase-credits';

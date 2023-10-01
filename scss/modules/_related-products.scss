@@ -1,0 +1,219 @@
+.related-products { 
+  margin-top: 40px;
+  overflow: hidden;
+  display: none;
+  position: relative;
+
+  @include breakpoint('mobile') {
+    height: 426px;
+  }
+
+  @include breakpoint('tablet-up') {
+    height: 524px;
+    @media (any-hover: hover) {
+      &:hover {
+        .owl-prev, .owl-next {
+          opacity: 1;
+          visibility: visible;
+        }
+      }
+    }
+  }
+
+  // .slick {
+  //   &-list {
+  //     @include breakpoint('mobile') {
+  //       margin-left: -8px;
+  //     }
+  //     @include breakpoint('tablet-up') {
+  //       padding-bottom: 24px;
+  //       &:after {
+  //         content: '';
+  //         display: block;
+  //         position: absolute;
+  //         right: 0;
+  //         top: 0;
+  //         bottom: 24px;
+  //       }
+  //     }
+  //     @include breakpoint('tablet') {
+  //       &:after {
+  //         width: 300px;
+  //         background: linear-gradient(270deg, #FFFFFF 17.5%, rgba(255, 255, 255, 0) 78.95%);
+  //       }
+  //     }
+  //     @include breakpoint('desktop') {
+  //       &:after {
+  //         width: 230px;
+  //         background: linear-gradient(270deg, #FFFFFF 6.52%, rgba(255, 255, 255, 0) 76.14%);
+  //       }
+  //     }
+  //   }
+  //   &-slide {
+  //     @include breakpoint('mobile') {
+  //       width: 224px;
+  //       padding-left: 24px;
+  //     }
+  //     @include breakpoint('tablet-up') {
+  //       width: 310px;
+  //       padding-left: 40px;
+  //     }
+  //   }
+  //   &-arrow {
+  //     border: none;
+  //     cursor: pointer;
+  //     font-size: 0;
+  //     line-height: 0;
+  //     width: 56px;
+  //     height: 56px;
+  //     border-radius: 50%;
+  //     background: url(../img/icons/arrow-forward.svg) no-repeat #fff center center;
+  //     box-shadow: 0px 4px 24px rgba(0, 0, 0, 0.08);
+  //     position: absolute;
+  //     top: 191px;
+  //     z-index: 1;
+  //     opacity: 0;
+  //     visibility: hidden;
+  //     @include transition(opacity, visibility, background-color);
+
+  //     @media (any-hover: hover) {
+  //       &:hover {
+  //         background-color: $color-bg-light;
+  //       }
+  //     }
+
+  //     &.slick {
+  //       &-prev {
+  //         left: 40px;
+  //         transform: rotate(-180deg);
+  //       }
+  //       &-next {
+  //         right: 40px;
+  //       }
+  //     }
+  //   }
+  // }
+
+  .owl {
+    &-stage-outer {
+      height: 100%;
+      @include breakpoint('mobile') {
+        padding-left: 24px;
+      }
+      @include breakpoint('tablet-up') {
+        padding-left: 40px;
+        &:after {
+          content: '';
+          display: block;
+          position: absolute;
+          right: 0;
+          top: 0;
+          height: 496px;
+        }
+      }
+      @include breakpoint('tablet') {
+        &:after {
+          width: 258px;
+          background: linear-gradient(270deg, #FFFFFF 17.5%, rgba(255, 255, 255, 0) 78.95%);
+        }
+      }
+      @include breakpoint('desktop') {
+        &:after {
+          width: 230px;
+          background: linear-gradient(270deg, #FFFFFF 6.52%, rgba(255, 255, 255, 0) 76.14%);
+        }
+      }
+    }
+    &-prev, &-next {
+      border: none;
+      cursor: pointer;
+      font-size: 0;
+      line-height: 0;
+      width: 56px;
+      height: 56px;
+      border-radius: 50%;
+      background: url(../img/icons/arrow-forward.svg) no-repeat #fff center center !important;
+      box-shadow: 0px 4px 24px rgba(0, 0, 0, 0.08);
+      position: absolute;
+      top: 191px;
+      z-index: 3;
+      opacity: 0;
+      visibility: hidden;
+      @include transition(opacity, visibility, background-color);
+
+      @media (any-hover: hover) {
+        &:hover {
+          background-color: $color-bg-light !important;
+        }
+      }
+
+      span {
+        display: none;
+      }
+    }
+    &-prev {
+      left: 40px;
+      transform: rotate(-180deg);
+    }
+    &-next {
+      right: 40px;
+    }
+  }
+
+  &__item {
+    vertical-align: top;
+
+    @include breakpoint('mobile') {
+      width: 200px;
+    }
+    @include breakpoint('tablet-up') {
+      width: 270px;
+    }
+
+    .product-tile {
+      @include breakpoint('mobile') {
+        box-shadow: none !important;
+      }
+      @include breakpoint('desktop-down') {
+        border: 1px solid $color-border;
+      }
+      &-favorite {
+        @include breakpoint('mobile') {
+          top: 8px;
+          left: 8px;
+        }
+        @include breakpoint('tablet-up') {
+          top: 15px;
+          left: 15px;
+        }
+      }
+    }
+  } 
+
+  &-section {
+    margin-top: 40px;
+    background-color: #fff;
+    padding-top: 40px;    
+
+    @include breakpoint('mobile') {
+      margin-left: -16px;
+      margin-right: -16px;
+      padding-bottom: 40px;
+    }
+
+    @include breakpoint('tablet-up') {
+      padding-bottom: 16px;
+    }
+
+    &__title {
+      font-size: 24px;
+      line-height: 24px;
+      @include breakpoint('mobile') {
+        padding-left: 16px;
+      }
+      @include breakpoint('tablet-up') {
+        padding-left: 40px;
+      }
+    }
+  }
+}

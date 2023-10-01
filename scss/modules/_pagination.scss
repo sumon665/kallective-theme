@@ -1,0 +1,58 @@
+.pagination {
+  display: flex;
+
+  @include breakpoint('desktop-down') {
+    margin-top: 40px;
+  }
+
+  a, span {      
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: $color-light;
+    @include transition(color);
+
+    @media (any-hover: hover) { 
+      &:hover {
+        color: $color-main;
+      }
+    }
+    &.active {
+      color: $color-main;
+    }
+
+    svg {
+      path {
+        fill: currentColor;
+        @include transition(all);
+      }
+    }
+
+    @include breakpoint('mobile') {
+      width: 48px;
+      height: 48px;
+      font-size: 16px;
+      line-height: 24px;
+    }
+    @include breakpoint('tablet-up') {
+      width: 64px;
+      height: 64px;
+      font-size: 18px;
+      line-height: 28px;
+    }
+  }
+
+  &-section {
+    display: flex;
+    align-items: center;
+
+    @include breakpoint('desktop-down') {
+      flex-direction: column;
+      padding-top: 40px;
+    }
+    @include breakpoint('desktop') {
+      padding-top: 80px;
+      justify-content: space-between;
+    }
+  }
+}

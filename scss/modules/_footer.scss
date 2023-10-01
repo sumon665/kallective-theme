@@ -1,0 +1,312 @@
+.footer {  
+  &-top {
+    display: flex;    
+    
+    @include breakpoint('desktop-down') {
+      flex-direction: column-reverse;
+    }
+
+    @include breakpoint('desktop') {
+      justify-content: space-between;
+    }
+
+    &-left {
+      display: flex;
+
+      @include breakpoint('desktop-down') {
+        flex-direction: column;
+        margin-top: 16px;
+      }
+    }
+
+    &-menu {
+      @include breakpoint('desktop-down') {
+        height: 1px;
+        overflow: hidden;
+        border-bottom: 1px solid $color-border;
+        @include transition(height);
+      }
+      a {
+        color: $color-main;
+        font-size: 16px;
+        line-height: 24px;
+
+        @media (any-hover: hover) { 
+          &:hover {
+            text-decoration: underline;
+          }
+        }
+      }
+      li {
+        margin-top: 16px;
+
+        @include breakpoint('desktop-down') {
+          &:last-child {
+            margin-bottom: 16px;
+          }
+        }
+      }
+      &-col {
+        @include breakpoint('desktop') {
+          margin-right: 85px;
+        }
+
+        &__title {
+          font-size: 16px;
+          line-height: 24px;
+          font-weight: 700;
+          color: $color-light;
+
+          @include breakpoint('desktop-down') {
+            cursor: pointer;
+            font-weight: 500;
+            color: $color-main;
+            padding: 10px 32px 9px 0;
+            margin-top: 24px;
+            position: relative;
+
+            &._opened {
+              font-weight: 700;
+
+              &:after {
+                transform: rotate(-180deg);
+              }
+            }
+
+            &:after {
+              content: '';
+              display: block;
+              position: absolute;
+              right: 0;
+              top: 50%;
+              margin-top: -12px;
+              width: 24px;
+              height: 24px;
+              background: url(../img/icons/chevron-down.svg) no-repeat transparent center center;
+              @include transition(transform);
+            }
+          }
+          @include breakpoint('desktop') {
+            padding-bottom: 8px;
+          }
+        }
+      }
+    }
+
+    &-right {
+      @include breakpoint('desktop') {
+        display: flex;
+        flex-direction: column;
+      }
+    }
+
+    &-section {
+      background-color: #fff;
+      padding: 40px 0;
+    }
+  }
+  &-btm {
+    display: flex;
+
+    @include breakpoint('mobile') {
+      flex-direction: column-reverse;
+    }
+    @include breakpoint('tablet-up') {
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    &-copy {
+      color: $color-light;
+
+      @include breakpoint('mobile') {
+        position: relative;
+        padding: 17px 0 16px;
+        font-size: 14px;
+
+        &:before {
+          content: '';
+          display: block;
+          position: absolute;
+          left: -16px;
+          right: -16px;
+          top: 0;
+          height: 1px;
+          background-color: $color-border;
+        }
+      }
+    }
+
+    .footer-terms-privacy {
+      @include breakpoint('desktop') {
+        display: flex;
+        margin: 0 auto 0 7px;
+
+        li {
+          margin-left: 38px;
+        }
+      }
+
+    }
+
+    &-icons {
+      display: flex;
+
+      @include breakpoint('mobile') {
+        padding: 16px 0;
+        justify-content: space-between;
+      }
+
+      li:not(:first-child) {
+        @include breakpoint('tablet') {
+          margin-left: 8px;
+        }
+        @include breakpoint('desktop') {
+          margin-left: 16px;
+        }
+      }
+
+      img {
+        display: block;
+
+        @include breakpoint('desktop') {
+          width: 72px;
+          height: 32px;
+        }
+      }
+    }
+
+    &-section {
+      @include breakpoint('tablet') {
+        padding: 16px 0;
+      }
+      @include breakpoint('desktop') {
+        padding: 12px 0;
+      }
+    }    
+  }
+
+  &-subscribe {
+    @include breakpoint('mobile') {
+      min-height: 108px;
+    }
+    @include breakpoint('tablet') {
+      height: 84px;
+    }
+    @include breakpoint('desktop') {
+      width: 355px;
+    }
+
+    &._success {
+      .footer-subscribe {
+        &-promo, &-form {
+          display: none;
+        }
+        &-success {
+          display: block;
+        }
+      }
+    }
+
+    &-promo {
+      @include breakpoint('desktop') {
+        width: 276px;
+      }
+    }
+    &-form {
+      form {
+        display: flex;
+        margin-top: 16px;
+      }
+
+      &__input {
+        margin-right: 7px;
+        flex-grow: 1;
+      }
+      &__btn {
+        .btn-primary {
+          width: 92px;
+        }
+      }
+    }
+
+    &-success {
+      display: none;
+      font-size: 16px;
+      line-height: 24px;
+      span {
+        display: block;
+        font-weight: 700;
+        padding-bottom: 16px;
+      }
+    }
+  }
+
+  &-social {
+    display: flex;
+    
+    @include breakpoint('desktop') {
+      margin-top: auto;
+    }
+
+    li:not(:first-child) {
+      margin-left: 16px;
+    }
+
+    a {
+      display: flex;
+      color: $color-main;
+
+      @media (any-hover: hover) { 
+        &:hover {
+          color: $color-accent;
+        }
+      }
+
+      svg {
+        @include transition(all);
+        path {
+          stroke: currentColor;
+        }
+      }
+    }
+  }
+
+  &-terms-privacy {
+    @include breakpoint('desktop') {
+      display: flex;
+      margin: 0 auto 0 7px;
+    }
+
+    a {
+      font-size: 16px;
+      line-height: 24px;
+      text-decoration: underline;
+      color: $color-main;
+
+      @media (any-hover: hover) { 
+        &:hover {
+          text-decoration: none;
+        }
+      }
+    }
+  }
+  &-terms-social {
+    margin-top: 40px;
+    @include breakpoint('mobile') {
+      .footer-terms-privacy li {
+        margin-bottom: 24px;
+      }
+    }
+    @include breakpoint('tablet') {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+
+      .footer-terms-privacy li:not(:first-child) {
+        margin-top: 24px;
+      }
+    }
+    
+  }
+}

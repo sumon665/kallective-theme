@@ -1,0 +1,44 @@
+.icon {
+  display: block;
+  width: 24px;
+  height: 24px;
+  background-repeat: no-repeat;
+  background-position: center center;
+
+  &-cross {
+    background-image:url(../img/icons/cross.svg);
+  }
+  &-cross-white {
+    background-image:url(../img/icons/cross-white.svg);
+  }
+  &-plus {
+    background-image:url(../img/icons/plus.svg);
+  }
+  &-minus {
+    background-image:url(../img/icons/minus.svg);
+  }
+  &-spinner {
+    background-image:url(../img/icons/spinner.svg);
+  }
+  &-login-facebook {
+    background-image: url(../img/icons/login-facebook.svg);
+  }
+  &-login-google {
+    background-image: url(../img/icons/login-google.svg);
+  }
+  &-logout {
+    background-image: url(../img/icons/log-out.svg);
+  }
+  &-edit {
+    background-image: url(../img/icons/edit.svg);
+  }
+  &-dot-white {
+    background-image: url(../img/icons/dot-white.svg);
+  }
+  &-check {
+    background-image: url(../img/icons/check.svg);
+  }
+  &-info {
+    background-image: url(../img/icons/info.svg);
+  }
+}

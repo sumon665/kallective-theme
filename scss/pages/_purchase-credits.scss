@@ -1,0 +1,313 @@
+.purchase-credits {
+  &-section {
+    background-color: #fff;
+    @include breakpoint('mobile') {
+      padding: 40px 16px;
+      margin: 0 -16px;
+    }
+    @include breakpoint('tablet-up') {
+      padding: 40px;
+    }
+
+    &__title {
+      font-weight: 600;
+      @include breakpoint('mobile') {
+        font-size: 16px;
+        line-height: 24px;
+      }
+      @include breakpoint('tablet-up') {
+        font-size: 24px;
+        line-height: 32px;
+      }
+    }
+  }
+  &-header {
+    margin-top: 40px;
+
+    h1 {
+      @include breakpoint('mobile') {
+        font-size: 18px;
+        line-height: 24px;
+      }
+      @include breakpoint('tablet') {
+        font-size: 24px;
+        line-height: 24px;
+      }
+      @include breakpoint('desktop') {
+        font-weight: 600;
+        font-size: 48px;
+        line-height: 64px;
+      }
+    }
+    p {
+      margin-top: 24px;
+      
+      @include breakpoint('desktop') {
+        font-size: 18px;
+        max-width: 908px;
+      }
+    }
+  }
+  &-list {
+    display: flex;
+    flex-wrap: wrap;
+    @include breakpoint('mobile') {
+      margin-top: -10px;
+    }
+    @include breakpoint('tablet') {
+      margin-top: 34px;
+    }
+    @include breakpoint('desktop') {
+      margin: -16px -20px 28px;
+    }
+
+    li {
+      @include breakpoint('desktop-down') {
+        width: 100%;
+        margin-top: 50px;
+      }
+      @include breakpoint('desktop') {
+        padding: 0 20px;
+        margin-top: 100px;
+      }
+      &._refer {
+        @include breakpoint('desktop') {
+          flex: 66.6666% 0 0;
+          order: -2;
+        }
+      }
+      &:not(._refer) {
+        @include breakpoint('desktop') {
+          flex: 33.3333% 0 0;
+        }
+      }
+
+      &._starter {
+        @include breakpoint('desktop') {
+          order: -1;
+
+          .purchase-credits-item {
+            &__price {
+              font-size: 38px;
+              line-height: 47px;
+              margin-top: 30px;
+
+              span {
+                font-size: 20px;
+                line-height: 28px;
+                vertical-align: super;
+              }
+            }
+            &__donated {
+              margin-top: 10px;
+            }
+          }
+        }
+      }
+      &._gold {
+        @include breakpoint('desktop') {
+          order: 2;
+        }
+        .purchase-credits-item {
+          background-color: #fff;
+          border-color: $color-main;
+
+          &__donated {
+            background-color: #F9F9F9;
+            border-top: 1px solid $color-border;
+          }
+        }
+      }
+      &._silver {
+        @include breakpoint('desktop') {
+          order: 3;
+        }
+      }
+      &._bronze {
+        @include breakpoint('desktop') {
+          order: 1;
+        }
+      }
+    }
+  }
+  &-refer {
+    border-radius: $border-radius;
+    border: 2px solid $color-main;
+
+    @include breakpoint('mobile') {
+      padding: 36px 24px;
+    }
+    @include breakpoint('tablet') {
+      padding: 57px 62px 46px;
+    }
+    @include breakpoint('desktop') {
+      padding: 51px 52px 47px;
+    }
+
+    &__badge {
+      display: inline-block;
+      vertical-align: top;
+      font-weight: 600;
+      font-size: 12px;
+      line-height: 24px;
+      color: $color-accent;
+    }
+
+    &__title {
+      font-weight: 600;
+      @include breakpoint('mobile') {
+        font-size: 18px;
+        line-height: 22px;
+        margin-top: 27px;
+      }
+      @include breakpoint('tablet') {
+        margin-top: 5px;
+      }
+      @include breakpoint('tablet-up') {
+        font-size: 34px;
+        line-height: 42px;
+        max-width: 431px;
+      }
+    }
+
+    &__desc {
+      font-size: 18px;
+      line-height: 28px;
+
+      @include breakpoint('mobile') {
+        margin: 27px 0;
+      }
+      @include breakpoint('tablet') {
+        margin: 21px 0;
+      }
+      @include breakpoint('desktop') {
+        margin: 25px 0;
+      }
+    }
+    &__link {
+      a {
+        @include breakpoint('mobile') {
+          padding-left: 10px;
+          padding-right: 10px;
+        }
+        svg {
+          @include breakpoint('mobile') {
+            margin-left: 5px;
+          }
+          @include breakpoint('tablet-up') {
+            margin-left: 20px;
+          }
+        }
+      }
+    }
+  }
+  &-item {
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+    background-color: $color-bg-light;
+    border: 2px solid $color-bg-light;
+    border-radius: $border-radius;
+
+    @include breakpoint('mobile') {
+      padding: 24px 24px 25px;
+    }
+    @include breakpoint('tablet') {
+      padding: 22px 43px 28px;
+    }
+    @include breakpoint('desktop') {
+      padding: 30px 33px 20px;
+    }
+
+    &__header {
+      border-bottom: 1px solid $color-main;
+      @include breakpoint('mobile') {
+        padding-bottom: 10px;
+        width: 198px;
+      }
+      @include breakpoint('tablet-up') {
+        padding-bottom: 14px;
+      }
+      h3 {
+        font-weight: 600;
+        font-size: 20px;
+        line-height: 28px;
+      }
+      p {
+        font-weight: 400;
+        @include breakpoint('mobile') {
+          font-size: 18px;
+        }
+        @include breakpoint('tablet-up') {
+          font-size: 20px;
+        }
+      }
+    }
+    &__price {
+      font-weight: 600;
+      color: $color-accent;
+
+      @include breakpoint('desktop-down') {
+        margin-top: 26px;
+        font-size: 38px;
+        line-height: 47px;
+      }
+      @include breakpoint('desktop') {
+        margin-top: 33px;
+        font-size: 32px;
+        line-height: 40px;
+      }
+    }
+    &__donated {
+      display: inline-block;
+      vertical-align: top;
+      width: 144px;
+      text-align: center;
+      color: $color-accent;
+      padding: 4px 0;
+      border-radius: 3px;
+      background-color: #fff;
+
+      @include breakpoint('desktop-down') {
+        margin-top: 10px;
+      }
+      @include breakpoint('desktop') {
+        margin-top: 14px;
+      }
+    }
+    &__desc {
+      font-size: 14px;
+
+      @include breakpoint('mobile') {
+        margin-top: 26px;
+      }
+      @include breakpoint('tablet') {
+        margin-top: 30px;
+      }
+      @include breakpoint('desktop') {
+        margin-top: 19px;
+      }
+    }
+    &__link {
+      margin-top: auto;
+      @include breakpoint('mobile') {
+        padding-top: 47px;
+      }
+      @include breakpoint('tablet') {
+        padding-top: 20px;
+      }
+      @include breakpoint('desktop') {
+        padding-top: 25px;
+      }
+
+      a {
+        @include breakpoint('tablet') {
+          width: 280px;
+        }
+        @include breakpoint('desktop') {
+          width: 100%;
+        }
+      }
+    }
+  }
+}
